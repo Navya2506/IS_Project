@@ -46,26 +46,27 @@
       var isClose=true;
         const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom"];
         var editor = "sorts\n" +
-            "    #people = {tommy, alex, john, daniel, sarah, peter, lino}.\n" +
-            "    #gender = {male, female}.\n" +
+            "    #country = {india,china,nepal,japan,southkorea,iran,srilanka}.\n" +
+            "    #games = {hockey,pingpong,volleyball,sumo,taekwondo,wrestling,volleyball}.\n" +
+            "    #conti = {asia}. \n"
             "predicates\n" +
-            "    advisor(#people, #people).\n" +
-            "    friend(#people, #people).\n" +
-            "    gender(#people,#gender).\n" +
-            "    spanish(#people).\n" +
+            "    continent(#country, #conti).\n" +
+            "    national_game(#country, #games).\n" +
             "rules\n" +
-            "    advisor(tommy, alex).\n" +
-            "    advisor(tommy, john).\n" +
-            "    advisor(tommy, daniel).\n" +
-            "    advisor(tommy, lino).\n" +
-            "    friend(lino, alex).\n" +
-            "    friend(lino, peter).\n" +
-            "    friend(sarah, alex).\n" +
-            "    friend(X, Y):-friend(Y,X).\n" +
-            "    gender(tommy,male).\n" +
-            "    gender(lino,male).\n" +
-            "    gender(sarah, female).\n" +
-            "    spanish(lino).";
+            "    continent(india, asia).\n" +
+            "    continent(china, asia).\n" +
+            "    continent(nepal, asia).\n" +
+            "    continent(japan, asia).\n" +
+            "    continent(southkorea, asia).\n" +
+            "    continent(iran, asia).\n" +
+            "    continent(srilanka, asia).\n" +
+            "    national_game(india, hockey). \n" + 
+            "    national_game(china, pingpong). \n" + 
+            "    national_game(nepal, volleyball). \n" + 
+            "    national_game(japan, sumo). \n" + 
+            "    national_game(southkorea, taekwondo). \n" + 
+            "    national_game(iran, wrestling). \n" + 
+            "    national_game(srilanka, volleyball).";
         // sorts
         var contstring = editor.split("sorts\n")[1].split("predicates\n");
         var sortstring = contstring[0].split('.');
