@@ -65,11 +65,11 @@
     <script>
       
       var isClose=true;
-        const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "which", "part"];
+        const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "which", "part", "in", "has", "it"];
         var editor = "sorts\n" +
-            "    #country = {india, china, nepal, japan, southkorea, cuba, mexico, canada}.\n" +
+            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh}.\n" +
             "    #conti = {asia, northamerica}.\n" +
-			"	 #game = {hockey, pingpong, volleyball, sumo, taekwondo, baseball, charreria, icehockey}.\n" +
+			"	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse} .\n" +
             "predicates\n" +
             "    continent(#conti, #country).\n" +
 			"    nationalgame(#game, #country).\n" +
@@ -77,18 +77,18 @@
 			"	 nationalgame(hockey,india).\n" +
 			"	 nationalgame(pingpong,china).\n" +
 			"	 nationalgame(volleyball,nepal).\n" +
-			<!--"	 nationalgame(sumo,japan).\n" + --!>
+			"    nationalgame(kabaddi,bangladesh).\n" +
 			"	 nationalgame(taekwondo,southkorea).\n" +
 			"	 nationalgame(baseball, cuba).\n" +
 			"	 nationalgame(charreria,mexico).\n" +
-			"	 nationalgame(icehockey,canada).\n" +
+			"	 nationalgame(lacrosse,canada).\n" +
 			"    continent(northamerica,cuba).\n" +
 			"    continent(northamerica,mexico).\n" +
 			"    continent(northamerica,canada).\n" +
 			"    continent(asia,india).\n" +
  			"    continent(asia,nepal).\n" +
 			"    continent(asia,china).\n" +
-			"    continent(asia,japan).\n" +
+			"    continent(asia,bangladesh).\n" +
 			"    continent(asia,southkorea).";
         // sorts
         var contstring = editor.split("sorts\n")[1].split("predicates\n");
