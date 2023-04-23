@@ -67,9 +67,9 @@
       var isClose=true;
         const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "which", "part", "in", "has", "it"];
         var editor = "sorts\n" +
-            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan}.\n" +
+            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan, georgia, indonesia, iran, israel, japan, malaysia, mongolia, pakistan, philippines, srilanka, tajikistan, turkey }.\n" +
             "    #conti = {asia, northamerica}.\n" +
-	    "	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, lacrosse, kabaddi, buzkashi, archery} .\n" +
+	    "	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, lacrosse, kabaddi, buzkashi, archery, rugbyunion, pencaksilat, wrestling, football, sumo, sepaktakraw, archery, hockey, arnis, volleyball, gushtigiri, wrestling} .\n" +
             "predicates\n" +
             "    continent(#conti, #country).\n" +
 			"    nationalgame(#game, #country).\n" +
@@ -83,6 +83,19 @@
 			"    nationalgame(lacrosse,canada).\n" +
 	    		"    nationalgame(kabaddi,bangladesh).\n" +
 	    		"    nationalgame(buzkashi,afghanistan).\n" +
+	    		"    nationalgame(archery,bhutan).\n" +
+	    		"    nationalgame(rugbyunion,georgia).\n" +
+	    		"    nationalgame(pencaksilat,indonesia).\n" +
+	    		"    nationalgame(wrestling,iran).\n" +
+	    		"    nationalgame(football,israel).\n" +
+	    		"    nationalgame(sumo,japan).\n" +
+	    		"    nationalgame(sepaktakraw,malaysia).\n" +
+	    		"    nationalgame(archery,mongolia).\n" +
+	    		"    nationalgame(hockey,pakistan).\n" +
+	    		"    nationalgame(arnis,philippines).\n" +
+	    		"    nationalgame(volleyball,srilanka).\n" +
+	    		"    nationalgame(gushtigiri,tajikistan).\n" +
+	    		"    nationalgame(wrestling,turkey).\n" +
 			"    continent(northamerica,cuba).\n" +
 			"    continent(northamerica,mexico).\n" +
 			"    continent(northamerica,canada).\n" +
