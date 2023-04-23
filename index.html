@@ -67,12 +67,12 @@
       var isClose=true;
         const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "which", "part", "in", "has", "it"];
         var editor = "sorts\n" +
-            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh}.\n" +
-            "    #conti = {asia, northamerica}.\n" +
-			"	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse} .\n" +
+            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan, gerogia, indonesia, iran, israel, japan, malaysia, mongolia, pakistan, philippines, srilanka, tajikistan, turkey}.\n" +
+            "    #conti = {asia, northamerica, southamerica}.\n" +
+	    "	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse, buzkashi, archery, rugbyunion, pencaksilat, wrestling, football, sumo, sepaktakraw, archery, hockey, arnis, volleyball, gushtigiri, oilwrestling } .\n" +
             "predicates\n" +
             "    continent(#conti, #country).\n" +
-			"    nationalgame(#game, #country).\n" +
+	    "    nationalgame(#game, #country).\n" +
             "rules\n" +
 			"	 nationalgame(hockey,india).\n" +
 			"	 nationalgame(pingpong,china).\n" +
