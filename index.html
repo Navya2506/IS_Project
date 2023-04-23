@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sample Intelligent Agent</title>
+    <title>Simple ASP Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -34,65 +34,38 @@
     </style>
   </head>
   <body>
-    <h1 style=" top: 20px;
-    text-align: center;
-    /* margin-top: 20px; */
-    position: relative;">Ask/Type a question</h1>
-    <!-- <h1>Ask/Type a Question</h1> -->
-    <!--<div id="answer"></div>-->
- <fieldset>
- <div>
+    <h1>Ask a Question</h1>
+    <div id="answer"></div>
+    <button id="voice-input-btn"><i class="fa fa-microphone"></i></button>
     <input type="text" id="text-input" placeholder="Type your question...">
-	<button id="voice-input-btn" style="    right: 55px;
-    position: relative;
-    width: 40px;
-    /* top: 2px; */
-    bottom: 3px;"><i class="fa fa-microphone"></i></button>
-	
-	<!--<button id="voice-input-btn"><i class="fa fa-microphone"></i></button> -->
-   <button id="submit-btn" style="position: relative;
-    margin-right: 27ppx;
-    /* margin-left: -26px; */
-    right: 35px;
-    bottom: 5px;">Submit</button>
-   
- </div>
-   </fieldset>
-	<div id="answer"></div>
+    <button id="submit-btn">Submit</button>
     <div id="answer-box"></div>
-	
 
     <script>
       
       var isClose=true;
-        const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "which", "part", "in", "has", "it"];
+        const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom"];
         var editor = "sorts\n" +
-            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan}.\n" +
-            "    #conti = {asia, northamerica, southamerica}.\n" +
-	    "	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, lacrosse, kabaddi, buzkashi, archery}.\n" +
+            "    #people = {tommy, alex, john, daniel, sarah, peter, lino}.\n" +
+            "    #gender = {male, female}.\n" +
             "predicates\n" +
-            "    continent(#conti, #country).\n" +
-	    "    nationalgame(#game, #country).\n" +
+            "    advisor(#people, #people).\n" +
+            "    friend(#people, #people).\n" +
+            "    gender(#people,#gender).\n" +
+            "    spanish(#people).\n" +
             "rules\n" +
-			"    nationalgame(hockey,india).\n" +
-			"    nationalgame(pingpong,china).\n" +
-			"    nationalgame(volleyball,nepal).\n" +
-			"    nationalgame(kabaddi,bangladesh).\n" +
-			"    nationalgame(taekwondo,southkorea).\n" +
-			"    nationalgame(baseball, cuba).\n" +
-			"    nationalgame(charreria,mexico).\n" +
-			"    nationalgame(lacrosse,canada).\n" +
-	    		"    nationalgame(kabaddi,bangladesh).\n" +
-	    		"    nationalgame(buzkashi,afghanistan).\n" +
-	    		"    nationalgame(archery,bhutan).\n" +
-			"    continent(northamerica,cuba).\n" +
-			"    continent(northamerica,mexico).\n" +
-			"    continent(northamerica,canada).\n" +
-			"    continent(asia,india).\n" +
- 			"    continent(asia,nepal).\n" +
-			"    continent(asia,china).\n" +
-			"    continent(asia,bangladesh).\n" +
-			"    continent(asia,southkorea).";
+            "    advisor(tommy, alex).\n" +
+            "    advisor(tommy, john).\n" +
+            "    advisor(tommy, daniel).\n" +
+            "    advisor(tommy, lino).\n" +
+            "    friend(lino, alex).\n" +
+            "    friend(lino, peter).\n" +
+            "    friend(sarah, alex).\n" +
+            "    friend(X, Y):-friend(Y,X).\n" +
+            "    gender(tommy,male).\n" +
+            "    gender(lino,male).\n" +
+            "    gender(sarah, female).\n" +
+            "    spanish(lino).";
         // sorts
         var contstring = editor.split("sorts\n")[1].split("predicates\n");
         var sortstring = contstring[0].split('.');
@@ -160,8 +133,6 @@
       const answerBox = document.getElementById('answer-box');
 
       submitBtn.addEventListener('click', () => {
-	    //alert("button pressed");
-		console.log(textInput.value);
         const question = textInput.value;
         if (question.trim() === '') {
           answerBox.innerHTML = 'Please ask a question.';
@@ -169,8 +140,7 @@
         }
         var trim_script = question.split(" ");
         trim_script = trim_script.filter(f => !stopwords.includes(f));
-        var queryQues = a.get(trim_script.join(" "), null, 0.5);
-		console.log(queryQues, 170);
+        var queryQues = a.get(trim_script.join(" "), null, 0.5); 
         getAnswer(queryQues);
         
       });
@@ -206,8 +176,8 @@
                 });
                 //var key1 = answerarr.length>2? answerarr[1]:answerarr[0];
                 var key2 = mainkey;
-                //console.log(key1 +'-'+ key2);
-                //console.log(predicates[key1][key2]);
+                console.log(key1 +'-'+ key2);
+                console.log(predicates[key1][key2]);
                 
                 var data = {
                     'action': "getQuery",
@@ -215,7 +185,7 @@
                     'editor': editor
                 };
           
-          console.log(data, 201)
+          console.log(data)
           
           
           
@@ -223,9 +193,7 @@
           url: "https://cors-anywhere.herokuapp.com/http://wave.ttu.edu/ajax.php",
           type: "POST",
           headers: {
-            "X-Requested-With": "XMLHttpRequest",
-			"Access-Control-Allow-Origin":"*",
-			"Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DElETE, OPTIONS"
+            "X-Requested-With": "XMLHttpRequest"
           },
           data: {
             action: "getQuery",
@@ -233,7 +201,7 @@
             editor: editor
           },
           success: function(response) {
-             console.log(response);
+            console.log(response);
              const answer = response || 'Sorry, I could not find an answer.';
              answerDiv.innerHTML = answer;
              answerBox.innerHTML = answer;
@@ -274,8 +242,8 @@
                //   console.log(answer);
                     
                // });
-      }
-     }
+            }
+        }
         
  
 
