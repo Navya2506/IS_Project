@@ -67,9 +67,9 @@
       var isClose=true;
         const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "which", "part", "in", "has", "it"];
         var editor = "sorts\n" +
-            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh}.\n" +
+            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan, georgia, indonesia, israel, iran, japan, malaysia, mongolia, philippines, tajikistan}.\n" +
             "    #conti = {asia, northamerica}.\n" +
-			"	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse} .\n" +
+	    "	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse, rugbyunion, pencaksilat, wrestling, associationfootball, sumo, sepaktakraw, archery, arnis, gushtigiri} .\n" +
             "predicates\n" +
             "    continent(#conti, #country).\n" +
 			"    nationalgame(#game, #country).\n" +
@@ -79,9 +79,20 @@
 			"    nationalgame(volleyball,nepal).\n" +
 			"    nationalgame(kabaddi,bangladesh).\n" +
 			"    nationalgame(taekwondo,southkorea).\n" +
-			"    nationalgame(baseball, cuba).\n" +
+			"    nationalgame(baseball,cuba).\n" +
 			"    nationalgame(charreria,mexico).\n" +
 			"    nationalgame(lacrosse,canada).\n" +
+	    		"    nationalgame(hockey,afghanistan).\n" +
+			"    nationalgame(pingpong,bhutan).\n" +
+			"    nationalgame(volleyball,georgia).\n" +
+			"    nationalgame(kabaddi,indonesia).\n" +
+			"    nationalgame(taekwondo,israel).\n" +
+			"    nationalgame(baseball,iran).\n" +
+			"    nationalgame(charreria,japan).\n" +
+			"    nationalgame(lacrosse,malaysia).\n" +
+	    		"    nationalgame(baseball,mongolia).\n" +
+			"    nationalgame(charreria,philippines).\n" +
+			"    nationalgame(lacrosse,tajikistan).\n" +
 			"    continent(northamerica,cuba).\n" +
 			"    continent(northamerica,mexico).\n" +
 			"    continent(northamerica,canada).\n" +
