@@ -37,7 +37,7 @@
     <h1 style=" top: 20px;
     text-align: center;
     /* margin-top: 20px; */
-    position: relative;">Ask/Type a question to find the national game, continents of the Asian, North American or South American countries</h1>
+    position: relative;">Ask/Type a question</h1>
     <!-- <h1>Ask/Type a Question</h1> -->
     <!--<div id="answer"></div>-->
  <fieldset>
@@ -68,7 +68,7 @@
         const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "which", "part", "in", "has", "it"];
         var editor = "sorts\n" +
             "    #countries = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan, georgia, indonesia, israel, iran, japan, malaysia, mongolia, philippines, tajikistan, anguilla, antiguaandbarbuda, barbados, bermuda, dominicianrepublic, grenada, haiti, jamaica, puertorico, thebahamas, turksandcaicosislands, unitedstatesofamerica, usa, argentina, brazil, chile, colombia, guyana, peru, uruguay, venezuela}.\n" +
-            "    #continents = {asia, northamerica, southamerica}.\n" +
+            "    #continents = {northamerica, southamerica, asia}.\n" +
 	    "	 #games = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse, rugbyunion, pencaksilat, wrestling, associationfootball, sumo, sepaktakraw, archery, arnis, gushtigiri, yachtracing, cricket, pasofino, pato, chileanrodeo, tejo, waterpolo, paletafronton, destrezascriollas} .\n" +
             "predicates\n" +
             "    continent(#continents, #countries).\n" +
@@ -121,6 +121,21 @@
 	    		"    continent(northamerica,anguilla).\n" +
 	    		"    continent(northamerica,antiguaandbarbuda).\n" +
 			"    continent(northamerica,barbados).\n" +
+	    		"    continent(asia,india).\n" +
+ 			"    continent(asia,nepal).\n" +
+			"    continent(asia,china).\n" +
+			"    continent(asia,bangladesh).\n" +
+	    		"    continent(asia,afghanistan).\n" +
+ 			"    continent(asia,bhutan).\n" +
+			"    continent(asia,georgia).\n" +
+			"    continent(asia,indonesia).\n" +
+	    		"    continent(asia,israel).\n" +
+ 			"    continent(asia,iran).\n" +
+			"    continent(asia,japan).\n" +
+			"    continent(asia,malaysia).\n" +
+	    		"    continent(asia,mongolia).\n" +
+ 			"    continent(asia,philippines).\n" +
+			"    continent(asia,tajikistan).\n" +
 			"    continent(northamerica,bermuda).\n" +
 			"    continent(northamerica,dominicianrepublic).\n" +
 			"    continent(northamerica,grenada).\n" +
@@ -139,21 +154,6 @@
 			"    continent(southamerica,peru).\n" +
 			"    continent(southamerica,uruguay).\n" +
 	    		"    continent(southamerica,venezuela).\n" 
-			"    continent(asia,india).\n" +
- 			"    continent(asia,nepal).\n" +
-			"    continent(asia,china).\n" +
-			"    continent(asia,bangladesh).\n" +
-	    		"    continent(asia,afghanistan).\n" +
- 			"    continent(asia,bhutan).\n" +
-			"    continent(asia,georgia).\n" +
-			"    continent(asia,indonesia).\n" +
-	    		"    continent(asia,israel).\n" +
- 			"    continent(asia,iran).\n" +
-			"    continent(asia,japan).\n" +
-			"    continent(asia,malaysia).\n" +
-	    		"    continent(asia,mongolia).\n" +
- 			"    continent(asia,philippines).\n" +
-			"    continent(asia,tajikistan).\n" +
 			"    continent(asia,southkorea).";
         // sorts
         var contstring = editor.split("sorts\n")[1].split("predicates\n");
