@@ -67,12 +67,12 @@
       var isClose=true;
         const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "which", "part", "in", "has", "it"];
         var editor = "sorts\n" +
-            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan, georgia, indonesia, israel, iran, japan, malaysia, mongolia, philippines, tajikistan, anguilla, antiguaandbarbuda, barbados, bermuda, dominicianrepublic, grenada, haiti, jamaica, puertorico, thebahamas, turksandcaicosislands, unitedstatesofamerica, usa, argentina, brazil, chile, colombia, guyana, peru, uruguay, venezuela}.\n" +
-            "    #conti = {asia, northamerica, southamerica}.\n" +
-	    "	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse, rugbyunion, pencaksilat, wrestling, associationfootball, sumo, sepaktakraw, archery, arnis, gushtigiri, yachtracing, cricket, pasofino, pato, chileanrodeo, tejo, waterpolo, paletafronton, destrezascriollas} .\n" +
+            "    #countries = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan, georgia, indonesia, israel, iran, japan, malaysia, mongolia, philippines, tajikistan, anguilla, antiguaandbarbuda, barbados, bermuda, dominicianrepublic, grenada, haiti, jamaica, puertorico, thebahamas, turksandcaicosislands, unitedstatesofamerica, usa, argentina, brazil, chile, colombia, guyana, peru, uruguay, venezuela}.\n" +
+            "    #continents = {asia, northamerica, southamerica}.\n" +
+	    "	 #games = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse, rugbyunion, pencaksilat, wrestling, associationfootball, sumo, sepaktakraw, archery, arnis, gushtigiri, yachtracing, cricket, pasofino, pato, chileanrodeo, tejo, waterpolo, paletafronton, destrezascriollas} .\n" +
             "predicates\n" +
-            "    continent(#conti, #country).\n" +
-	    "    nationalgame(#game, #country).\n" +
+            "    continent(#continents, #countries).\n" +
+	    "    nationalgame(#games, #countries).\n" +
             "rules\n" +
 			"    nationalgame(hockey,india).\n" +
 			"    nationalgame(pingpong,china).\n" +
