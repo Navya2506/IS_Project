@@ -67,9 +67,9 @@
       var isClose=true;
         const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "which", "part", "in", "has", "it"];
         var editor = "sorts\n" +
-            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan, georgia, indonesia, israel, iran, japan, malaysia, mongolia, philippines, tajikistan}.\n" +
+            "    #country = {india, china, nepal, southkorea, cuba, mexico, canada, bangladesh, afghanistan, bhutan, georgia, indonesia, israel, iran, japan, malaysia, mongolia, philippines, tajikistan, anguilla, antiguaandbarbuda, barbados, bermuda, dominicianrepublic, greneda, haiti, jamaica, puertorico, thebahamas, turksandcaicosislands, unitedstatesofamerica, usa}.\n" +
             "    #conti = {asia, northamerica}.\n" +
-	    "	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse, rugbyunion, pencaksilat, wrestling, associationfootball, sumo, sepaktakraw, archery, arnis, gushtigiri} .\n" +
+	    "	 #game = {hockey, pingpong, volleyball, taekwondo, baseball, charreria, kabaddi, lacrosse, rugbyunion, pencaksilat, wrestling, associationfootball, sumo, sepaktakraw, archery, arnis, gushtigiri, yachtracing, cricket, pasofino} .\n" +
             "predicates\n" +
             "    continent(#conti, #country).\n" +
 	    "    nationalgame(#game, #country).\n" +
@@ -93,6 +93,19 @@
 	    		"    nationalgame(archery,mongolia).\n" +
 			"    nationalgame(arnis,philippines).\n" +
 			"    nationalgame(gushtigiri,tajikistan).\n" +
+			"    nationalgame(yachtracing,anguilla).\n" +
+	    		"    nationalgame(cricket,antiguaandbarbuda).\n" +
+			"    nationalgame(cricket,barbados).\n" +
+			"    nationalgame(cricket,bermuda).\n" +
+			"    nationalgame(baseball,dominicianrepublic).\n" +
+			"    nationalgame(cricket,grenada).\n" +
+			"    nationalgame(associationfootball,haiti).\n" +
+			"    nationalgame(cricket,jamaica).\n" +
+			"    nationalgame(pasofino,puertorico).\n" +
+	    		"    nationalgame(cricket,thebahamas).\n" +
+			"    nationalgame(cricket,turksandcaicosislands).\n" +
+			"    nationalgame(baseball,unitedstatesofamerica).\n" +
+	    		"    nationalgame(baseball,usa).\n" +
 			"    continent(northamerica,cuba).\n" +
 			"    continent(northamerica,mexico).\n" +
 			"    continent(northamerica,canada).\n" +
